@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fab399f4_8e810b4d",
+        "filename": "WorkPlace/src/main/webapp/index.jsp",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1006389
+      },
+      "writtenOn": "2015-10-05T20:46:31Z",
+      "side": 1,
+      "message": "I think we won\u0027t ever use JSP pages in this project.\nindex.html would be better.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 1
+      },
+      "revId": "93b818bcbf85e60e5b766536cd5db961cf9c2ae7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
