@@ -29,6 +29,12 @@ cd /vagrant/WorkPlace
 
 apt-get install -y unzip
 
+export DEBIAN_FRONTEND=noninteractive
+apt-get -q -y install mysql-server
+mysqladmin -u root password 123456
+mysql -u root -p'123456' WorkPlace < dump.sql
+
+cd WorkPlace/src/main/webapp
 mkdir extjs
 cd extjs
 

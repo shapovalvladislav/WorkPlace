@@ -10,7 +10,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "hashicorp/precise32"
+  config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+  config.vm.box = "precise32"
   config.vm.network "private_network", ip: "192.168.50.4"
   config.vm.provision "shell", path: "provision.sh"
  # config.vm.network "private_network", ip: "192.168.50.1"
