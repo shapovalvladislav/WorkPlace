@@ -2,7 +2,6 @@ Ext.application({
     name: 'WorkPlace',
 
     stores: [
-
     ],
     views: [
         'WorkPlace.view.Auth',
