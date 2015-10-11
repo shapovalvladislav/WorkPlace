@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_0d2c21ab",
+        "filename": "WorkPlace/src/main/webapp/app/view/Employees.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1006221
+      },
+      "writtenOn": "2015-10-11T17:43:56Z",
+      "side": 1,
+      "message": "Let\u0027s create folders for each tab.\ne.g. WorkPlace.view.employees.Employees\n\nWhat do you think?",
+      "range": {
+        "startLine": 1,
+        "startChar": 10,
+        "endLine": 1,
+        "endChar": 38
+      },
+      "revId": "d3af594195ec6cf6d57f24bc95c3b2a4e6875376",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ed2e0da5",
+        "filename": "WorkPlace/src/main/webapp/app/view/Main.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1006221
+      },
+      "writtenOn": "2015-10-11T17:43:56Z",
+      "side": 1,
+      "message": "Why do you use items here? Do you plan to add more items here? If no, you can simply write:\n{\n    title: \u0027Company Employees\u0027,\n    xtype: \u0027employees\u0027\n}",
+      "range": {
+        "startLine": 39,
+        "startChar": 16,
+        "endLine": 43,
+        "endChar": 17
+      },
+      "revId": "d3af594195ec6cf6d57f24bc95c3b2a4e6875376",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
