@@ -3,6 +3,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -11,8 +12,11 @@ import javax.persistence.Table;
 public class Employee extends DomainSuperClass implements Serializable {
     private String name;
     private String surname;
+    private String department;
     private String position;
-    private long boss_id;
+    @ManyToOne
+    @JoinColumn(name="boss_id")
+    private Employee boss;
     private String email;
 
     public Employee() {}
@@ -35,6 +39,15 @@ public class Employee extends DomainSuperClass implements Serializable {
         this.surname = surname;
     }
 
+    @Column(name = "department")
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
     @Column(name = "position")
     public String getPosition() {
         return position;
@@ -53,13 +66,12 @@ public class Employee extends DomainSuperClass implements Serializable {
         this.email = email;
     }
 
-    @ManyToOne(optional = true)
-    public long getBossId() {
-        return boss_id;
+    public Employee getBoss() {
+        return boss;
     }
 
-    public void setBossId(long boss_id) {
-        this.boss_id = boss_id;
+    public void setBoss(Employee boss) {
+        this.boss = boss;
     }
 
 }

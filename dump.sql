@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.44, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.44, for debian-linux-gnu (i686)
 --
 -- Host: localhost    Database: WorkPlace
 -- ------------------------------------------------------
--- Server version	5.5.44-0+deb8u1-log
+-- Server version	5.5.44-0ubuntu0.12.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -24,12 +24,15 @@ DROP TABLE IF EXISTS `Employees`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Employees` (
   `id` bigint(20) NOT NULL,
-  `boss_id` bigint(20) NOT NULL,
+  `department` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `position` varchar(255) DEFAULT NULL,
   `surname` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `boss_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_enjyjpao1l6gjuh7syi8afrec` (`boss_id`),
+  CONSTRAINT `FK_enjyjpao1l6gjuh7syi8afrec` FOREIGN KEY (`boss_id`) REFERENCES `Employees` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -37,6 +40,11 @@ CREATE TABLE `Employees` (
 -- Dumping data for table `Employees`
 --
 
+LOCK TABLES `Employees` WRITE;
+/*!40000 ALTER TABLE `Employees` DISABLE KEYS */;
+INSERT INTO `Employees` VALUES (1,'Development','ivanov@gmail.com','Ivan','Developer','Ivanov',NULL),(2,'QA','petrov@gmail.com','Peter','QA Engineer','Petrov',NULL),(3,'Technical Support','semenov@gmail.com','Semen','Support Engineer','Semen',NULL),(4,'Development','andreev@gmail.com','Andrew','Developer','Andreev',1),(5,'Development','antonov@gmail.com','Anton','Developer','Antonov',1);
+/*!40000 ALTER TABLE `Employees` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `Messages`
@@ -58,6 +66,11 @@ CREATE TABLE `Messages` (
 --
 -- Dumping data for table `Messages`
 --
+
+LOCK TABLES `Messages` WRITE;
+/*!40000 ALTER TABLE `Messages` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Messages` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `Posts`
@@ -81,6 +94,11 @@ CREATE TABLE `Posts` (
 --
 -- Dumping data for table `Posts`
 --
+
+LOCK TABLES `Posts` WRITE;
+/*!40000 ALTER TABLE `Posts` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Posts` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `Tasks`
@@ -107,6 +125,10 @@ CREATE TABLE `Tasks` (
 -- Dumping data for table `Tasks`
 --
 
+LOCK TABLES `Tasks` WRITE;
+/*!40000 ALTER TABLE `Tasks` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Tasks` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -117,4 +139,4 @@ CREATE TABLE `Tasks` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-09 10:30:27
+-- Dump completed on 2015-10-11 15:30:19
