@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "baada198_8d175151",
+        "filename": "WorkPlace/src/main/webapp/app/view/Employees.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1006389
+      },
+      "writtenOn": "2015-10-11T17:51:30Z",
+      "side": 1,
+      "message": "Let\u0027s do it when there are 2+ classes for such a folder.\nOther classes may stay in root of view/model/etc.",
+      "parentUuid": "baada198_0d2c21ab",
+      "range": {
+        "startLine": 1,
+        "startChar": 10,
+        "endLine": 1,
+        "endChar": 38
+      },
+      "revId": "d3af594195ec6cf6d57f24bc95c3b2a4e6875376",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_ed2e0da5",
         "filename": "WorkPlace/src/main/webapp/app/view/Main.js",
         "patchSetId": 3
