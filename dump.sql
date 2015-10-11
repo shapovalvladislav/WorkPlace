@@ -121,6 +121,13 @@ CREATE TABLE `Tasks` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+LOCK TABLES `Tasks` WRITE;
+/*!40000 ALTER TABLE `Tasks` DISABLE KEYS */;
+INSERT INTO `Tasks` VALUES (2,NOW(),1,NOW(),NOW(),1,0,0,'First task'),(1,NOW(),1,NOW(),NOW(),1,1,1,'Second task');
+/*!40000 ALTER TABLE `Tasks` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
 --
 -- Dumping data for table `Tasks`
 --

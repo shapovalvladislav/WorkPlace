@@ -5,7 +5,7 @@ Ext.define('WorkPlace.viewModel.Employee', {
 
     stores: {
         employees: {
-            type: 'employees',
+            type: 'employees'
         }
     }
 });

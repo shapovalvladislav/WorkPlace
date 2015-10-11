@@ -23,8 +23,8 @@ public class Task extends DomainSuperClass implements Serializable {
     private Timestamp expectedFinishDate;
     private Timestamp actualFinishDate;
     private String title;
-    private TaskPriority priority;
-    private Status status;
+    private int priority;
+    private int status;
     @OneToMany(mappedBy="task_id", fetch= FetchType.EAGER)
     @OrderBy("date")
     private Set<Post> posts;
@@ -89,21 +89,21 @@ public class Task extends DomainSuperClass implements Serializable {
         this.title = title;
     }
 
-    @Enumerated(EnumType.ORDINAL)
-    public TaskPriority getPriority() {
+    @Column(name = "priority")
+    public int getPriority() {
         return priority;
     }
 
-    public void setPriority(TaskPriority priority) {
+    public void setPriority(int priority) {
         this.priority = priority;
     }
 
-    @Enumerated(EnumType.ORDINAL)
-    public Status getStatus() {
+    @Column(name = "status")
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 

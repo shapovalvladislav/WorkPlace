@@ -9,6 +9,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
+#config.vm.provider "virtualbox" do |v|
+#  v.memory = 2048
+#  v.cpus = 2
+#end
+
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box_url = "http://files.vagrantup.com/precise32.box"
   config.vm.box = "precise32"

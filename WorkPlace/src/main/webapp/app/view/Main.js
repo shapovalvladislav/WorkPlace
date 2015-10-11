@@ -3,7 +3,8 @@ Ext.define('WorkPlace.view.Main', {
 
     requires: [
         'WorkPlace.viewController.Main',
-        'WorkPlace.view.Employees'
+        'WorkPlace.view.Employees',
+        'WorkPlace.view.IncomingTasks'
     ],
 
     xtype: 'main',
@@ -29,7 +30,8 @@ Ext.define('WorkPlace.view.Main', {
         xtype: 'tabpanel',
         items:[
             {
-                title: 'Incomming Tasks'
+                title: 'Incomming Tasks',
+                xtype: 'incomingTasks'
             },
             {
                 title: 'Outgoing Tasks'
