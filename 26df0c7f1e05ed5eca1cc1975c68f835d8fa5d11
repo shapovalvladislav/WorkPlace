@@ -106,6 +106,30 @@
     },
     {
       "key": {
+        "uuid": "9ab29df4_4cee1b24",
+        "filename": "WorkPlace/src/main/webapp/app/view/IncomingTasks.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1006221
+      },
+      "writtenOn": "2015-10-16T21:19:56Z",
+      "side": 1,
+      "message": "I\u0027ll check it",
+      "parentUuid": "9ab29df4_2c82c752",
+      "range": {
+        "startLine": 24,
+        "startChar": 12,
+        "endLine": 24,
+        "endChar": 18
+      },
+      "revId": "26df0c7f1e05ed5eca1cc1975c68f835d8fa5d11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ab29df4_6c7cbf73",
         "filename": "WorkPlace/src/main/webapp/app/viewController/IncomingTasks.js",
         "patchSetId": 1
@@ -117,6 +141,30 @@
       "writtenOn": "2015-10-16T21:15:38Z",
       "side": 1,
       "message": "I\u0027m not sure, but may be it\u0027d be better to make it as View\u0027s listener ?",
+      "range": {
+        "startLine": 11,
+        "startChar": 13,
+        "endLine": 11,
+        "endChar": 20
+      },
+      "revId": "26df0c7f1e05ed5eca1cc1975c68f835d8fa5d11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ab29df4_8cf833e7",
+        "filename": "WorkPlace/src/main/webapp/app/viewController/IncomingTasks.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1006221
+      },
+      "writtenOn": "2015-10-16T21:19:56Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "9ab29df4_6c7cbf73",
       "range": {
         "startLine": 11,
         "startChar": 13,
