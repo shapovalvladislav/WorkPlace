@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9ab29df4_ccab0bd5",
+        "filename": "WorkPlace/src/main/webapp/app/model/IncomingTasks.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1006221
+      },
+      "writtenOn": "2015-10-16T21:11:06Z",
+      "side": 1,
+      "message": "Back-end has these constants. It is bad practice to duplicate constants",
+      "parentUuid": "9ab29df4_6ca59f03",
+      "revId": "26df0c7f1e05ed5eca1cc1975c68f835d8fa5d11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ab29df4_8caaf3d2",
         "filename": "WorkPlace/src/main/webapp/app/model/IncomingTasks.js",
         "patchSetId": 1
