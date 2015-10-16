@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9ab29df4_ccd94b85",
+        "filename": "WorkPlace/src/main/webapp/app/model/IncomingTasks.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1006389
+      },
+      "writtenOn": "2015-10-16T21:23:54Z",
+      "side": 1,
+      "message": "I think when we work with identifiers it makes such fields more independent. And these identifiers can be used for localization in future. It\u0027s a holy war question)\nIt\u0027s not critical, make it as you want.\n\nPS: Are you sure that ENUM values will be deserialized without problems with strings when we will create new Tasks via writer of this store ?",
+      "parentUuid": "9ab29df4_ccab0bd5",
+      "revId": "26df0c7f1e05ed5eca1cc1975c68f835d8fa5d11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ab29df4_8caaf3d2",
         "filename": "WorkPlace/src/main/webapp/app/model/IncomingTasks.js",
         "patchSetId": 1
