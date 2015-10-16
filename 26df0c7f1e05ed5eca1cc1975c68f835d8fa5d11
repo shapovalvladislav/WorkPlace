@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ab29df4_6ca59f03",
+        "filename": "WorkPlace/src/main/webapp/app/model/IncomingTasks.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1006389
+      },
+      "writtenOn": "2015-10-16T21:04:22Z",
+      "side": 1,
+      "message": "As far as I know it\u0027s enum that is stored as int in DB.\nI think it should be int and we should create constants for mapping this value to string.\nIt will be easier to create back-end modules.\nLook at convert method for Ext.data.Field. It may be useful in this case.",
+      "revId": "26df0c7f1e05ed5eca1cc1975c68f835d8fa5d11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ab29df4_8caaf3d2",
+        "filename": "WorkPlace/src/main/webapp/app/model/IncomingTasks.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1006389
+      },
+      "writtenOn": "2015-10-16T21:04:22Z",
+      "side": 1,
+      "message": "The same as for priority",
+      "range": {
+        "startLine": 23,
+        "startChar": 19,
+        "endLine": 23,
+        "endChar": 25
+      },
+      "revId": "26df0c7f1e05ed5eca1cc1975c68f835d8fa5d11",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
