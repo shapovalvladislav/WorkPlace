@@ -23,7 +23,7 @@ apt-get -y install tomcat7-admin
 service tomcat7 stop
 
 apt-get -y install vim
-java -jar json-web-key-generator.jar -t RSA -s 2048 -i 1 -u sig -S | sed '1d' > /vagrant/WorkPlace/src/main/resources/keys.json
+java -jar /vagrant/json-web-key-generator.jar -t RSA -s 2048 -i 1 -u sig -S | sed '1d' > /vagrant/WorkPlace/src/main/resources/keys.json
 apt-get -y install maven
 
 rm /etc/tomcat7/tomcat-users.xml

@@ -1,18 +1,18 @@
-Ext.define('WorkPlace.store.IncomingTasks', {
+Ext.define('WorkPlace.store.OutgoingTasks', {
     extend: 'Ext.data.Store',
 
-    alias: 'store.incomingTasks',
+    alias: 'store.outgoingTasks',
 
     requires: [
         'WorkPlace.overrides.JsonProxy'
     ],
 
-    model: 'WorkPlace.model.IncomingTasks',
+    model: 'WorkPlace.model.OutgoingTasks',
     autoLoad: true,
 
     proxy: {
         type: 'jsonProxy',
-        url: '/WorkPlace/rest/tasks/get/in',
+        url: '/WorkPlace/rest/tasks/get/out',
         reader: {
             type: 'json',
             rootProperty: 'info',
