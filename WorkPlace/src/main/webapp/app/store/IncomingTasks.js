@@ -13,7 +13,7 @@ Ext.define('WorkPlace.store.IncomingTasks', {
     proxy: {
         type: 'jsonProxy',
         url: '/WorkPlace/rest/tasks/get',
-        extraParams: { assigneeId: localStorage.getItem('userId') },
+        extraParams: {},
         reader: {
             type: 'json',
             rootProperty: 'info',
