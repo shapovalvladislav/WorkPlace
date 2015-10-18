@@ -124,6 +124,7 @@ CREATE TABLE `Tasks` (
 LOCK TABLES `Tasks` WRITE;
 /*!40000 ALTER TABLE `Tasks` DISABLE KEYS */;
 INSERT INTO `Tasks` VALUES (2,NOW(),1,NOW(),NOW(),1,0,0,'First task'),(1,NOW(),1,NOW(),NOW(),1,1,1,'Second task');
+INSERT INTO `Tasks` VALUES (3,NOW(),1,NOW(),NOW(),2,0,0,'Test task'),(4,NOW(),1,NOW(),NOW(),1,1,1,'Test2 task');
 /*!40000 ALTER TABLE `Tasks` ENABLE KEYS */;
 UNLOCK TABLES;
 
