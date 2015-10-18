@@ -4,7 +4,8 @@ Ext.define('WorkPlace.view.Main', {
     requires: [
         'WorkPlace.viewController.Main',
         'WorkPlace.view.Employees',
-        'WorkPlace.view.IncomingTasks'
+        'WorkPlace.view.IncomingTasks',
+        'WorkPlace.view.OutgoingTasks'
     ],
 
     xtype: 'main',
@@ -34,7 +35,8 @@ Ext.define('WorkPlace.view.Main', {
                 xtype: 'incomingTasks'
             },
             {
-                title: 'Outgoing Tasks'
+                title: 'Outgoing Tasks',
+                xtype: 'outgoingTasks'
             },
             {
                 title: 'Company Employees',
