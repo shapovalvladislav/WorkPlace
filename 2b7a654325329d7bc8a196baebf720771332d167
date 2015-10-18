@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ab29df4_80263767",
+        "filename": "WorkPlace/src/main/webapp/app/store/OutgoingTasks.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1006389
+      },
+      "writtenOn": "2015-10-18T16:15:38Z",
+      "side": 1,
+      "message": "Look, please, at my authentication commit. Request scheme was changed. Now url urs is .../tasks/get/in and .../tasks/get/out. And now we don\u0027t need to send our personal information manually. Just send empty extraParams here.",
+      "range": {
+        "startLine": 16,
+        "startChar": 23,
+        "endLine": 16,
+        "endChar": 33
+      },
+      "revId": "2b7a654325329d7bc8a196baebf720771332d167",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
