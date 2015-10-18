@@ -10,11 +10,26 @@ Ext.application({
 
     launch: function () {
         // Temporary code until LDAP authentication is ready
-        var loggedIn;
-        localStorage.setItem('userId', 1); //TODO: remove
-
-        loggedIn = localStorage.getItem("loggedIn");
-        Ext.widget(loggedIn ? 'main' : 'auth');
+        if (Ext.util.Cookies.get('token')) {
+            Ext.Ajax.request({
+                url: '/WorkPlace/rest/auth/validate',
+                jsonData: {
+                    token: Ext.util.Cookies.get('token')
+                },
+                method: 'POST',
+                success: function(response) {
+                    Ext.widget('main');
+                },
+                failure: function(response) {
+                    if (response.status == 401) {
+                        Ext.widget('auth');
+                    }
+                },
+                scope: this
+           });
+        } else {
+            Ext.widget('auth');
+        }
     }
 });
 
