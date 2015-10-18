@@ -1,18 +1,30 @@
 package rest;
 
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 
 import domain.Task;
 import schema.TasksRequest;
 import service.TasksService;
+import service.TokenService;
 
 @Path("/tasks")
 public class Tasks {
+
+    @Context
+    private HttpServletRequest httpRequest;
+
+    @Context
+    private UriInfo uri;
 
     @POST
     @Path("/get")
@@ -21,10 +33,16 @@ public class Tasks {
     public Object getTasks(TasksRequest req) {
         Object info;
         rest.Response response = new rest.Response();
+        String token = TokenService.getToken(httpRequest);
 
-        if (req == null) {
+        if (req == null || token == null) {
             response.setSuccess(false);
             return response;
+        }
+
+        Map<String, Object> tokenInfo = TokenService.getInfo(token);
+        if (tokenInfo.containsKey("userId")) {
+            req.setAssigneeId((Long) tokenInfo.get("userId"));
         }
 
         if (req.getId() != null) {
@@ -38,16 +56,6 @@ public class Tasks {
         response.setInfo(info);
 
         return response;
-    }
-
-    @POST
-    @Path("/post")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response createTask(Task task) {
-
-        String result = "";
-        return Response.status(201).entity(result).build();
-
     }
 
 }

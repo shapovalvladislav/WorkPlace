@@ -22,14 +22,16 @@ Ext.define('WorkPlace.view.Auth', {
                 xtype: 'textfield',
                 name: 'login',
                 fieldLabel: 'Login',
-                allowBlank: false
+                allowBlank: false,
+                reference: 'loginField'
             },
             {
                 xtype: 'textfield',
                 name: 'password',
                 inputType: 'password',
                 fieldLabel: 'Password',
-                allowBlank: false
+                allowBlank: false,
+                reference: 'passwordField'
             }
         ],
         buttons: [
