@@ -2,6 +2,7 @@ package rest;
 
 public class Response {
     private boolean success;
+    private String msg;
     private Object info;
 
     public Response() {}
@@ -17,5 +18,11 @@ public class Response {
     }
     public void setInfo(Object info) {
         this.info = info;
+    }
+    public String getMsg() {
+        return msg;
+    }
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 }

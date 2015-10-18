@@ -4,7 +4,7 @@ Ext.define('WorkPlace.viewController.Main', {
 
     onClickButton: function () {
         // Temporary code until LDAP authentication is ready
-        localStorage.removeItem('loggedIn');
+        Ext.util.Cookies.clear('token');
         this.getView().destroy();
         Ext.widget('auth');
 

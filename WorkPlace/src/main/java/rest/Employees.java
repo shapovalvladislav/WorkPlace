@@ -1,18 +1,25 @@
 package rest;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 
-import domain.Task;
 import schema.EmployeesRequest;
 import service.EmployeesService;
 
 @Path("/employees")
 public class Employees {
+
+     @Context
+     private HttpServletRequest httpRequest;
+
+     @Context
+     private UriInfo uri;
 
     @POST
     @Path("/get")
@@ -37,16 +44,6 @@ public class Employees {
         response.setInfo(info);
 
         return response;
-    }
-
-    @POST
-    @Path("/post")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response createTask(Task task) {
-
-        String result = "";
-        return Response.status(201).entity(result).build();
-
     }
 
 }
