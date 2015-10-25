@@ -3,6 +3,10 @@ Ext.define('WorkPlace.model.Employee', {
 
     fields: [
         {
+            name: 'id',
+            type: 'int'
+        },
+        {
             name: 'name'
         },
         {
