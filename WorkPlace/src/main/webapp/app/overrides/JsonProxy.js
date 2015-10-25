@@ -21,6 +21,8 @@ Ext.define('WorkPlace.overrides.JsonProxy', {
             disableCaching: false // explicitly set it to false, ServerProxy handles caching
         });
 
+        this.extraParams = {};
+
         Ext.Ajax.request(request);
         return request;
     },

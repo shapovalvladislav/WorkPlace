@@ -17,7 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box_url = "http://files.vagrantup.com/precise32.box"
   config.vm.box = "precise32"
-  config.vm.network "private_network", ip: "192.168.50.4"
+  config.vm.network "public_network", ip: "192.168.50.4"
   config.vm.provision "shell", path: "provision.sh"
  # config.vm.network "private_network", ip: "192.168.50.1"
   # Disable automatic box update checking. If you disable this, then
