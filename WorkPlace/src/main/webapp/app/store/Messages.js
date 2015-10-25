@@ -1,21 +1,24 @@
-Ext.define('WorkPlace.store.Employees', {
+Ext.define('WorkPlace.store.Messages', {
     extend: 'Ext.data.Store',
-    alias: 'store.employees',
+
+    alias: 'store.messages',
 
     requires: [
         'WorkPlace.overrides.JsonProxy'
     ],
 
-    model: 'WorkPlace.model.Employee',
-    autoLoad: true,
+    model: 'WorkPlace.model.Message',
 
     proxy: {
          type: 'jsonProxy',
-         url: '/WorkPlace/rest/employees',
+         url: '/WorkPlace/rest/messages',
          reader: {
              type: 'json',
              rootProperty: 'info',
              successProperty: 'success'
+         },
+         writer: {
+            type: 'json'
          }
      }
 });

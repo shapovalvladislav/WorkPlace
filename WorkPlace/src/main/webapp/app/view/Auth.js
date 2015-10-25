@@ -23,7 +23,10 @@ Ext.define('WorkPlace.view.Auth', {
                 name: 'login',
                 fieldLabel: 'Login',
                 allowBlank: false,
-                reference: 'loginField'
+                reference: 'loginField',
+                fieldStyle: {
+                    display: 'inherit'
+                }
             },
             {
                 xtype: 'textfield',
@@ -31,7 +34,10 @@ Ext.define('WorkPlace.view.Auth', {
                 inputType: 'password',
                 fieldLabel: 'Password',
                 allowBlank: false,
-                reference: 'passwordField'
+                reference: 'passwordField',
+                fieldStyle: {
+                    display: 'inherit'
+                }
             }
         ],
         buttons: [
