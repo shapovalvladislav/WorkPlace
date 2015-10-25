@@ -23,37 +23,37 @@ import service.TokenService;
 @Path("/auth")
 public class Auth {
 
-     @Context
-     private HttpServletRequest httpRequest;
+    @Context
+    private HttpServletRequest httpRequest;
 
-     @Context
-     private UriInfo uri;
+    @Context
+    private UriInfo uri;
 
-        @POST
-        @Path("/validate")
-        @Consumes(MediaType.APPLICATION_JSON)
-        @Produces(MediaType.APPLICATION_JSON)
-        public Object validate(Object req) {
-            rest.Response response = new rest.Response();
-            String token = TokenService.getToken(httpRequest);
+    @POST
+    @Path("/validate")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Object validate(Object req) {
+        rest.Response response = new rest.Response();
+        String token = TokenService.getToken(httpRequest);
 
-            if (req == null || token == null) {
-                response.setSuccess(false);
-                return javax.ws.rs.core.Response.status(401).entity(response).build();
-            }
-
-            {
-              if(TokenService.validate(token)) {
-                  response.setSuccess(true);
-                  return javax.ws.rs.core.Response.status(200).entity(response).build();
-              }
-
-              response.setSuccess(false);
-              // Remove cookie (max-age = 0)
-              NewCookie tokenCookie = new NewCookie("token", null, "/", uri.getBaseUri().getHost(), null, 0, false);
-              return javax.ws.rs.core.Response.status(401).entity(response).cookie(tokenCookie).build();
-            }
+        if (req == null || token == null) {
+            response.setSuccess(false);
+            return javax.ws.rs.core.Response.status(401).entity(response).build();
         }
+
+        {
+            if(TokenService.validate(token)) {
+                response.setSuccess(true);
+                return javax.ws.rs.core.Response.status(200).entity(response).build();
+            }
+
+            response.setSuccess(false);
+            // Remove cookie (max-age = 0)
+            NewCookie tokenCookie = new NewCookie("token", null, "/", uri.getBaseUri().getHost(), null, 0, false);
+            return javax.ws.rs.core.Response.status(401).entity(response).cookie(tokenCookie).build();
+        }
+    }
 
     @POST
     @Path("/request")
@@ -84,7 +84,7 @@ public class Auth {
         rest.Response response = new rest.Response();
 
         if (req == null || req.getNonce() == null || req.getLogin() == null
-                        || req.getDigest() == null)
+                || req.getDigest() == null)
         {
             response.setSuccess(false);
             return response;
@@ -115,9 +115,10 @@ public class Auth {
         }
 
         NewCookie tokenCookie = new NewCookie("token", token, "/", uri.getBaseUri().getHost(), null, Integer.MAX_VALUE, false);
+        NewCookie userIdCookie = new NewCookie("userId", "1", "/", uri.getBaseUri().getHost(), null, Integer.MAX_VALUE, false);
 
         return javax.ws.rs.core.Response.status(200).entity(response).
-                cookie(tokenCookie).build();
+                cookie(tokenCookie).cookie(userIdCookie).build();
     }
 
 }

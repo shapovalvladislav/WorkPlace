@@ -3,18 +3,18 @@ Ext.define('WorkPlace.view.Employees', {
     xtype: 'employees',
 
     requires: [
-        'WorkPlace.viewModel.Employee',
-        'WorkPlace.viewController.Employees',
-        'WorkPlace.store.Employees'
+        'WorkPlace.viewController.Employees'
     ],
 
-    viewModel: 'employee',
     controller: 'employees',
 
+    listeners: {
+        render: 'onRender'
+    },
     items: [
         {
             xtype: 'grid',
-            bind: '{employees}',
+            reference: 'employeesGrid',
             plugins: 'gridfilters',
             columns: [
                 {
