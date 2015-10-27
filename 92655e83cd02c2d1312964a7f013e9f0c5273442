@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ab29df4_8206201f",
+        "filename": "WorkPlace/src/main/webapp/app/overrides/JsonProxy.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1006221
+      },
+      "writtenOn": "2015-10-27T11:34:39Z",
+      "side": 1,
+      "message": "TODO",
+      "range": {
+        "startLine": 20,
+        "startChar": 26,
+        "endLine": 20,
+        "endChar": 28
+      },
+      "revId": "92655e83cd02c2d1312964a7f013e9f0c5273442",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
