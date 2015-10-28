@@ -6,7 +6,8 @@ Ext.define('WorkPlace.view.Main', {
         'WorkPlace.view.Employees',
         'WorkPlace.view.IncomingTasks',
         'WorkPlace.view.OutgoingTasks',
-        'WorkPlace.view.messages.Main'
+        'WorkPlace.view.messages.Main',
+        'WorkPlace.view.statistics.Main'
     ],
 
     xtype: 'main',
@@ -44,7 +45,8 @@ Ext.define('WorkPlace.view.Main', {
                 xtype: 'employees'
             },
             {
-                title: 'Statistics'
+                title: 'Statistics',
+                xtype: 'statistics'
             },
             {
                 title: 'Messages',
