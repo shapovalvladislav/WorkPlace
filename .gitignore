@@ -6,4 +6,4 @@ WorkPlace/.settings/
 **/sftp-config.json
 bin/
 WorkPlace/src/main/java/Main.java
-
+WorkPlace/src/main/resources/keys.json

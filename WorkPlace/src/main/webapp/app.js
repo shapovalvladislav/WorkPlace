@@ -42,9 +42,8 @@ Ext.namespace('WorkPlace').config = {
         },
         statuses: {
             0: 'NEW',
-            1: 'ASSIGNED',
-            2: 'WAITING',
-            3: 'RESOLVED'
+            1: 'WAITING',
+            2: 'RESOLVED'
         }
     }
 };

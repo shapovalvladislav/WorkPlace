@@ -35,4 +35,8 @@ public class DaoFactory {
         return new TasksDAO(getSessionFactory());
     }
 
+    public static PostsDAO getPostsDAO() {
+        return new PostsDAO(getSessionFactory());
+    }
+
 }
