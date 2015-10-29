@@ -8,5 +8,9 @@ Ext.define('WorkPlace.viewController.Main', {
         this.getView().destroy();
         Ext.widget('auth');
 
+    },
+
+    onCreateTask: function() {
+        Ext.widget('newTask');
     }
 });

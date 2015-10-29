@@ -17,7 +17,7 @@ Ext.define('WorkPlace.overrides.JsonProxy', {
             scope         : this,
             callback      : this.createRequestCallback(request, operation, callback, scope),
             method        : this.getMethod(request),
-            jsonData        : this.extraParams,
+            jsonData      : this.extraParams,
             disableCaching: false // explicitly set it to false, ServerProxy handles caching
         });
 

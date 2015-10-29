@@ -1,6 +1,10 @@
 package rest;
 
 import java.util.Map;
+import java.util.Date;
+import java.sql.Timestamp;
+import java.util.Set;
+import java.util.HashSet;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
@@ -14,6 +18,8 @@ import javax.ws.rs.core.UriInfo;
 import schema.TasksRequest;
 import service.TasksService;
 import service.TokenService;
+import domain.Task;
+import domain.Post;
 
 @Path("/tasks")
 public class Tasks {
@@ -25,10 +31,10 @@ public class Tasks {
     private UriInfo uri;
 
     @POST
-    @Path("/get/in")
+    @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Object getIncommingTasks(TasksRequest req) {
+    public Object getTasks(TasksRequest req) {
         Object info;
         rest.Response response = new rest.Response();
         String token = TokenService.getToken(httpRequest);
@@ -39,39 +45,26 @@ public class Tasks {
         }
 
         Map<String, Object> tokenInfo = TokenService.getInfo(token);
+
         if (tokenInfo.containsKey("userId")) {
-            req.setAssigneeId((Long) tokenInfo.get("userId"));
-        }
-
-        if (req.getId() != null) {
-            info = TasksService.findById(req.getId());
-        } else {
-            info = TasksService.getList(req);
-        }
-
-        response.setSuccess(info != null);
-        response.setInfo(info);
-
-        return response;
-    }
-
-    @POST
-    @Path("/get/out")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Object getOutgoingTasks(TasksRequest req) {
-        Object info;
-        rest.Response response = new rest.Response();
-        String token = TokenService.getToken(httpRequest);
-
-        if (req == null || token == null) {
-            response.setSuccess(false);
-            return response;
-        }
-
-        Map<String, Object> tokenInfo = TokenService.getInfo(token);
-        if (tokenInfo.containsKey("userId")) {
-            req.setAssignerId((Long) tokenInfo.get("userId"));
+            if (req.getAction().equals("getIncoming")) {
+                req.setAssigneeId((Long) tokenInfo.get("userId"));
+            } else if (req.getAction().equals("getOutgoing")) {
+                req.setAssignerId((Long) tokenInfo.get("userId"));
+            } else if (req.getAction().equals("add")) {
+                Task task = new Task();
+                task.setCreatedById((Long) tokenInfo.get("userId"));
+                task.setPerformerId(req.getInfo().getPerformerId());
+                Date givenDate = new Date();
+                task.setGivenDate(new Timestamp(givenDate.getTime()));
+                task.setExpectedFinishDate(new Timestamp(req.getInfo().getExpectedDate().getTime()));
+                task.setTitle(req.getInfo().getTitle());
+                task.setPriority(req.getInfo().getPriority());
+                task.setStatus(req.getInfo().getStatus());
+                Task newTask = TasksService.createTask(task);
+                //TODO: post
+                return response;
+            }
         }
 
         if (req.getId() != null) {
