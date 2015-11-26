@@ -13,6 +13,7 @@ Ext.define('WorkPlace.view.Auth', {
     title: 'Authentication',
     closable: false,
     autoShow: true,
+    constrain: true,
 
     items: {
         xtype: 'form',
