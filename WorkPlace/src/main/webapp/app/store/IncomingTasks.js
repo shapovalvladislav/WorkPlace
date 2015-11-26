@@ -12,7 +12,10 @@ Ext.define('WorkPlace.store.IncomingTasks', {
 
     proxy: {
         type: 'jsonProxy',
-        url: '/WorkPlace/rest/tasks/get/in',
+        url: '/WorkPlace/rest/tasks',
+        extraParams: {
+            action: 'getIncoming'
+        },
         reader: {
             type: 'json',
             rootProperty: 'info',
