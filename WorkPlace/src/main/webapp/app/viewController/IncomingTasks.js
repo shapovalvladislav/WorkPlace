@@ -3,13 +3,19 @@ Ext.define('WorkPlace.viewController.IncomingTasks', {
 
     alias: 'controller.incomingTasks',
 
+    requires: [
+        'WorkPlace.view.Task'
+    ],
+
     views: [
         'incomingTasks'
     ],
 
     showTask: function(grid, record) {
         var id = record.get('id');
-        //TODO: open Task window
+        var w = Ext.widget('Task');
+        w.taskId = id;
+        w.show();
     }
 
 });

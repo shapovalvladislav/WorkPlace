@@ -5,7 +5,7 @@ Ext.define('WorkPlace.viewModel.NewTask', {
 
     stores: {
         performers: {
-           source: 'WorkPlace.store.Employees'
+            source: 'WorkPlace.store.Employees'
         }
     }
 
