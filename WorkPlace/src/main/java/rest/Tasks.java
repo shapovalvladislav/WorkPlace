@@ -70,6 +70,11 @@ public class Tasks {
                 post.setTaskId(newTask.getId());
                 PostsService.createPost(post);
                 return response;
+            } else if (req.getAction().equals("getTask")) {
+                info = TasksService.findById(req.getId());
+                response.setSuccess(info != null);
+                response.setInfo(info);
+                return response;
             }
         }
 

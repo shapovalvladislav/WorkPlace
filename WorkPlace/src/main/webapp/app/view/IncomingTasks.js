@@ -19,7 +19,7 @@ Ext.define('WorkPlace.view.IncomingTasks', {
     controller: 'incomingTasks',
 
     listeners: {
-        rowclick: 'showTask'
+        rowdblclick: 'showTask'
     },
 
     columns: [
